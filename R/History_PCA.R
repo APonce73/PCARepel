@@ -53,8 +53,10 @@ PCbiplot <- function(datos, Variables, Titulo, multiplicador){
 iris
 head(iris)
 iris1 <- list(var = iris[,1:4], value = iris[,5])
-PCbiplot(iris1$var, iris1$value, "Hola", 1)
+PCbiplot(iris1$var, iris1$value, "Hola", 2)
 
+head(mtcars)
 
+PCbiplot(mtcars[,-10], as.factor(mtcars[,10]), "Hola :)", 2 )
 
 

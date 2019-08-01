@@ -10,9 +10,8 @@ library(tidyverse)
 #
 #
 
-#Funcion con 5 componentes del PCA
-# renglon = a los valores por renglón
-# columnas 0 los valores por columnas
+#Funcion con 4 componentes del PCA
+# datos = con la base de datos con sólo valores numericos
 # Variables = la variable categ´órica
 #Titulo = Es el titulo de la grafica
 #Multiplicador =  un valor para re-escalar la gráfica

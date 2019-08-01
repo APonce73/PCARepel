@@ -10,9 +10,19 @@ Existen varios paquetes para hacer Análisis de componentes principales (PCA), c
 con ggplot se han hecho muchas visualizaciones y existe un paquete llamado
 *ggord* donde visualiza de forma amigable los PCA. Sin embargo no incluye la función #repel del paquete *ggrepel*. Por lo que se hizo esta función
 
+La funcion depende de los siguientes paquetes:
+
+```{r, echo = TRUE}
+
+library(ade4)
+library(ggrepel)
+library(tidyverse)
+
+```
+
 el código es el siguiente
 
-```{r pressure, echo=FALSE}
+```{r, echo = TRUE}
 #Funcion con 4 componentes del PCA
 # datos = con la base de datos con sólo valores numericos
 # Variables = la variable categ´órica
@@ -54,10 +64,10 @@ PCbiplot <- function(datos, Variables, Titulo, multiplicador){
 aqui la figura con el ejemplo de iris
 
 
-```{r pressure, echo=FALSE}
+```{r , echo = TRUE}
 
 
-iris
+data(iris)
 head(iris)
 iris1 <- list(var = iris[,1:4], value = iris[,5])
 PCbiplot(iris1$var, iris1$value, "Hola", 2)

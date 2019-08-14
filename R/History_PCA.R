@@ -1,6 +1,6 @@
 library(ade4)
-library(ggrepel)
 library(tidyverse)
+library(ggrepel)
 
 ######
 ###################
@@ -21,7 +21,7 @@ PCbiplot <- function(datos, Variables, Titulo, multiplicador){
 
   pca1a <- data.frame(pca1$li)
   pca1b <- data.frame(pca1$co)
-  Variables <- Variables
+  Variables <- as.factor(Variables)
   Titulo <- as.character(c(Titulo))
   Eigen <- pca1$eig
   PC1 <- round(100*(Eigen/sum(Eigen)),1)[1]
@@ -49,14 +49,16 @@ PCbiplot <- function(datos, Variables, Titulo, multiplicador){
 #PCbiplot(pca1$li, pca1$co, Tabla3$Var1$Grupos, pca1$eig,"PCA Grupos de K-means", 4)
 #
 
-
+#ejemplo con la base de datos iris
 iris
 head(iris)
 iris1 <- list(var = iris[,1:4], value = iris[,5])
 PCbiplot(iris1$var, iris1$value, "Hola", 2)
 
+#Ahora con mtcars
 head(mtcars)
+mtcars1 <- list(var = mtcars[,-10], value = mtcars[,10])
 
-PCbiplot(mtcars[,-10], as.factor(mtcars[,10]), "Hola :)", 2 )
+PCbiplot(mtcars1$var, mtcars1$value, "Hola :)", 2 )
 
 
